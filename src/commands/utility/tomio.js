@@ -4,10 +4,10 @@ const { callLLM } = require('../../utils/LLM.js')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('tomio')
-		.setDescription('Hlavne po me nic nechtej!')
+		.setDescription('Hlavně po mně nic nechtěj!')
 		.addStringOption(option =>
 			option.setName('dotaz')
-				.setDescription('Neco co po nem chces')
+				.setDescription('Něco co po něm chceš.')
 				.setRequired(true)),
 	async execute(interaction) {
 		try {

@@ -4,7 +4,7 @@ const { useQueue } = require('discord-player');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('resume')
-        .setDescription('Resume the playback'),
+        .setDescription('No konečně mě necháte domluvit pani redaktorko!'),
     async execute(interaction) {
         await interaction.deferReply();
         const queue = useQueue(interaction.guild.id);

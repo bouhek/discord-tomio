@@ -4,7 +4,7 @@ const { useMainPlayer } = require('discord-player');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('play')
-        .setDescription('Play a song from YouTube')
+        .setDescription('Uslyšíš zlaté české hlasivky.')
         .addStringOption(option =>
             option.setName('track')
                 .setDescription('The URL or name of the track')
@@ -26,7 +26,7 @@ module.exports = {
                 }
             });
 
-            return interaction.followUp(`Zaspívám vám **${track.title}**, ale ticho tady bude mrtkiii!!!`);
+            return interaction.followUp(`Zazpívám vám **${track.title}**, ale ticho tady bude mrtkiii!!!`);
         } catch (e) {
             // let's return error if something failed
             return interaction.followUp(`Posralo se něco, oprav si to debílku: ${e}`);

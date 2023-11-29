@@ -4,7 +4,7 @@ const { useQueue } = require('discord-player');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('skip')
-        .setDescription('Skip a song to next one'),
+        .setDescription('Vytáhnu tam nějákou další pochutinu.'),
     async execute(interaction) {
         await interaction.deferReply();
         const queue = useQueue(interaction.guild.id);
