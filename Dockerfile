@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:current-slim
 WORKDIR /app/discord-tomio
 COPY ./package*.json ./
 RUN npm ci

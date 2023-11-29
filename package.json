@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@discord-player/extractor": "^4.4.5",
-    "@discordjs/voice": "^0.16.1",
     "axios": "^1.6.2",
     "discord-player": "^6.6.6",
     "discord.js": "^14.14.1",

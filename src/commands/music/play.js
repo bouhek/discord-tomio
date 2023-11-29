@@ -13,7 +13,7 @@ module.exports = {
         const player = useMainPlayer();
         const channel = interaction.member.voice.channel;
         if (!channel) return interaction.reply('Pojd do voicu ty zmrde, ti ukazu!'); // make sure we have a voice channel
-        const query = interaction.options.getString('track', true); // we need input/query to play
+        const query = interaction.options.getString('banger', true); // we need input/query to play
 
         // let's defer the interaction as things can take time to process
         await interaction.deferReply();
