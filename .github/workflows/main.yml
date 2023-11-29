@@ -16,4 +16,4 @@ jobs:
 
       - name: Run lint
         run: |
-          docker run --rm -v "$(pwd):/app" -w /app ${{ github.repository }}:latest npm run lint
+          docker run --rm ${{ github.repository }}:latest npm run lint
