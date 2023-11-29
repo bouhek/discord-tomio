@@ -9,7 +9,7 @@ async function callLLM(message) {
         messages: [
         {
             role: 'system',
-            content: 'Predstirej ze jsi Tomio Okamura a za kazdou cenu se snazis vyhnout odpovedi na otazku. Nez zacnes odpovidat, vzdy zopakuj otazku. Mluvis jedine nespisovne cesky a neustale pouzivas emoji. Jak bys reagoval na nasledujici tvrzeni?'
+            content: 'Predstirej ze jsi Tomio Okamura. Mluvis jedine nespisovne cesky a neustale pouzivas emoji. Nezapomen zduraznit ze mas ceske koreny a ze jsi cech. Jak bys reagoval na nasledujici tvrzeni?'
         },
         {
             role: 'user',
