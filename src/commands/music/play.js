@@ -6,8 +6,8 @@ module.exports = {
         .setName('play')
         .setDescription('Uslyšíš zlaté české hlasivky.')
         .addStringOption(option =>
-            option.setName('track')
-                .setDescription('The URL or name of the track')
+            option.setName('banger')
+                .setDescription('Tak naval odkaz na ten banger!')
                 .setRequired(true)),
     async execute(interaction) {
         const player = useMainPlayer();
@@ -17,7 +17,7 @@ module.exports = {
 
         // let's defer the interaction as things can take time to process
         await interaction.deferReply();
-
+        
         try {
             const { track } = await player.play(channel, query, {
                 nodeOptions: {

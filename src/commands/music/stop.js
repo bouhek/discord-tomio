@@ -9,6 +9,6 @@ module.exports = {
         await interaction.deferReply();
         const queue = useQueue(interaction.guild.id);
         queue.delete();
-        return interaction.followUp("Stopped the playback.");
+        return interaction.followUp("Nazdar bazar.");
     }
 };
