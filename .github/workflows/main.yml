@@ -14,9 +14,13 @@ jobs:
           file: ./Dockerfile
           tags: ${{ github.repository }}:latest
   lint:
-    needs: image-build
     runs-on: ubuntu-latest
     steps:
-      - name: Lint
-        run: |
-          docker run --rm ${{ github.repository }}:latest npm run lint
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci --include=dev 
+
+      - name: Run eslint
+        run: npm run lint
