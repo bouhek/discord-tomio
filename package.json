@@ -5,6 +5,7 @@
     "discord-player": "^6.6.6",
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",
+    "ffmpeg-static": "^5.2.0",
     "i": "^0.3.7",
     "mediaplex": "^0.0.9",
     "npm": "^10.2.4",
