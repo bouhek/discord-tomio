@@ -6,7 +6,6 @@ const { Player } = require('discord-player');
 require('dotenv').config()
 
 // Create a new client instance
-// https://discord.com/oauth2/authorize?client_id=813841189769183332&permissions=277083450689&scope=bot%20applications.commands
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
