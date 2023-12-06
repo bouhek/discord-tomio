@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { useMainPlayer } = require('discord-player');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -25,8 +26,17 @@ module.exports = {
                     metadata: interaction // we can access this metadata object using queue.metadata later on
                 }
             });
-
-            return interaction.followUp(`Zazpívám vám **${track.title}**, ale ticho tady bude mrtkiii!!!`);
+            const songEmbed = new EmbedBuilder()
+                .setColor(0xFF0000)
+                .setTitle(track.title)
+                .setURL(track.url)
+                .setAuthor({ name: 'Japonský samuraj', iconURL: 'https://1gr.cz/fotky/lidovky/17/111/c460/ANI321e56_lg_tomio1.JPG' })
+                .setDescription('Tak tohle je neskutečnej banger!')
+                .addFields({ name: 'Dýlka', value: track.duration })
+                .setImage('https://c.tenor.com/Ex4Pl_uvQS4AAAAC/okamurapls-okamura.gif')
+                .setTimestamp()
+                .setFooter({ text: 'Koukej nabáhat do voicu si to poslechnout!' });
+            return interaction.followUp({ embeds: [songEmbed] });
         } catch (e) {
             // let's return error if something failed
             return interaction.followUp(`Posralo se něco, oprav si to debílku: ${e}`);
