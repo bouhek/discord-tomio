@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { useMainPlayer, Player } = require('discord-player');
+const { useMainPlayer } = require('discord-player');
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
