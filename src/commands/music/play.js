@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { useMainPlayer } = require('discord-player');
+const { useMainPlayer, Player } = require('discord-player');
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
@@ -15,15 +15,16 @@ module.exports = {
         const channel = interaction.member.voice.channel;
         if (!channel) return interaction.reply('Pojd do voicu ty zmrde, ti ukazu!'); // make sure we have a voice channel
         const query = interaction.options.getString('banger', true); // we need input/query to play
-
+        const searchResult = await player.search(query)
         // let's defer the interaction as things can take time to process
         await interaction.deferReply();
         
         try {
-            const { track } = await player.play(channel, query, {
+            const { track } = await player.play(channel, searchResult, {
                 nodeOptions: {
                     // nodeOptions are the options for guild node (aka your queue in simple word)
-                    metadata: interaction // we can access this metadata object using queue.metadata later on
+                    metadata: interaction, // we can access this metadata object using queue.metadata later on
+                    volume: 100
                 }
             });
             const songEmbed = new EmbedBuilder()
